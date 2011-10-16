@@ -1,0 +1,30 @@
+     <%= stylesheet_link_tag    "submit" %>
+  <%= stylesheet_link_tag    "form" %>
+     <div id="page">
+     <%  if session[:mad]!=nil %>
+    <% else %>
+<%= form_tag({:url=>'login/create'}, {:class => "bar"}) do %>
+         <% if flash[:notice] %>
+    <div id="notice"><%= flash[:notice] %></div>
+<% end %>
+   <div id="rat">
+    <p>
+  <%= label_tag :xx, 'Username',:class=>'xx'  %>
+  <%= text_field_tag(:q) %>
+   </p>
+ <p>
+    <%= label_tag :y, 'Password',:class =>'yy' %>
+    <%= password_field_tag(:y)%>
+ </p>
+    <p>
+
+      <button type="submit" value="Submit" class="button">Submit</button>
+
+</p>
+    </div>
+<%= link_to 'New User', new_user_path %>
+  </div>
+
+<% end %>
+ <% end %>
+

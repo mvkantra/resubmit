@@ -1,0 +1,67 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+          <%= stylesheet_link_tag    "homebutton" %>
+  <%= stylesheet_link_tag    "header" %>
+  <%= stylesheet_link_tag    "custom" %>
+  <%= stylesheet_link_tag    "form" %>
+  <%= stylesheet_link_tag    "submit" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+
+
+
+
+<body>
+
+<div id="head">
+<span style="float:left;">
+<%= form_tag(:controller => :logins, :action => :homelog)  do %>
+       <%=  submit_tag("BackChannel Application" ,:class=>'b') %>
+
+<% end  %>
+</span>
+   <span style="float:right;">
+<%= form_tag(:controller => :logins, :action => :logout) do %>
+
+      <% if session[:mad] != nil %>
+
+       <%=  submit_tag("Logout" ,:class=>'logout') %>
+      <% end  %>
+    <% end %>
+     </span>
+
+      <%= form_tag(:controller => :posts, :action => :search) do %>
+
+
+      <%= search_field_tag(:l)%>
+
+      <%= select_tag "name", options_for_select([ "search by user", "search by post content"]) %>
+      <%= submit_tag("",:class =>'e',:id=>"Search") %>
+
+          end)
+       &nbsp;
+       &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+
+              <% if session[:mad]!=nil %>
+               <%= link_to "Signed in as #{session[:logged]}", "/users/#{session[:mad]} ",{:style => 'color:#FFFFFF'} ,:notice => ''%>
+                  <% end %>
+
+
+    <% end %>
+
+
+<%= yield %>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+                                                   personal:
+                                                     content: "hello how u?"
+                                                     postName: "I am fine"
+                                                     user: sindhura
+
+                                                   college:
+                                                     content: "best univ"
+                                                     postName: "who told??"
+                                                     user: ncsu
+
+                                                   noname:
+                                                     content:
+                                                     postName: "confused"
+                                                     user: sindhura
+
+
+                                                   noname1:
+                                                     content: "confused"
+                                                     postName: "who"
+                                                     user: mary
+
+                                                   extra:
+                                                     id: 3
+                                                     content: "bye bye"
+                                                     postName: "getlost"
+                                                     user: sindhura
+
+                                                   personal1:
+                                                     content: "hello how u?"
+                                                     user: sindhura
+                                                     IDofParent: 831155591
+
+                                                   personal2:
+                                                       content: "hello how u?"
+                                                       user: sindhura
+                                                       IDofParent: 831155591
+
+                                                   personal3:
+                                                       content: "hello how u?"
+                                                       user: sindhura
+                                                       IDofParent: 831155591
+
+                                                   personal4:
+                                                          content: "hello how u?"
+                                                          postName: "Introduction"
+                                                          user: mvkantra
+
+
+                                                   personal5:
+                                                          content: "hello how u miss sindhura?"
+                                                          postName: "Hi"
+                                                          user: mvkantra
+

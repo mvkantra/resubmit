@@ -1,0 +1,58 @@
+
+
+
+#head {
+ position:absolute;
+ margin-left:-10px;
+ top:0;
+    border-color: #ffffff;
+    border-width: 5px;
+ display:block;
+ width:100%;
+ height:40px;
+
+     background: #141414;
+
+}
+
+#l{
+    border-radius: 2px;
+
+}
+#name{
+    border-radius: 4px;
+
+}
+
+ 
+
+
+
+#bet{
+    margin-right: 10px;
+
+}
+#rep{
+    height:90px;
+    font: TimesNewRoman;
+    width:50%;
+    background-color: #E0EEEE;
+    border-radius: 5px;
+    border-style: ridge;
+    border-color: #EE2C2C;
+    border-width: 3px;
+      margin-left: 269px;
+    margin-top: 0px;
+}
+table tr td.contact{height:30px;  background-color:#E0EEEE;border-radius: 5px;border-width: 10px; border-color:#ADD8E6;  margin-left: 180px; margin-top: 0px;}
+table tr td a{color: #007B9F; font-size:1.5em; text-decoration:blink;margin-left: auto;}
+ table tr td.like{height:30px; width:40px;  background-color:#C6C6C6; margin-left: 20px;position: relative;}
+table tr td.link_like{height:30px; width:40px; background-color:#C6C6C6; margin-left: 20px;position: relative;}
+table tr td.edit{height:30px; width:40px;  background-color:#C6C6C6; margin-left: 20px;position: relative;}
+table tr td.destroy{height:30px; width:40px;  background-color:#C6C6C6; margin-left: 20px;position: relative;}
+  table.table
+  {
+      width:60%;
+      margin-right: 20%;
+      margin-left: 20%;
+  }

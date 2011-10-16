@@ -1,0 +1,62 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Content:</b>
+  <%= @post.content %>
+</p>
+
+<p>
+  <b>postName:</b>
+  <%= @post.postName %>
+<b>Likes:</b>
+  <%= @vote %>
+</p>
+
+
+<%= link_to 'Like', likes_path  %>
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
+
+
+
+<h1></h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @post8.each do |post| %>
+  <tr>
+  <%  if post.IDofParent==session[:lmad] && post.IDofParent != post.id%>
+    <td><%= post.content %></td>
+    <td><%= post.postName %></td>
+    <td><%= link_to 'Show', post %></td>
+    <% if post.user_id==session[:mad] %>
+    <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    <td><%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %></td>
+     <% end %>
+        <%end%>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= form_tag(:url=>'post/reply') do %>
+
+       <p>
+  <%= label_tag(:rep, 'Reply') %>
+  <%= text_field_tag(:rep) %>
+   </p>
+
+    <p>
+   <%= submit_tag("Reply") %>
+</p>
+
+<% end %>
+
+<%= link_to 'New Post', new_post_path %>

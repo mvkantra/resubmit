@@ -1,0 +1,38 @@
+<%= stylesheet_link_tag    "form" %>
+<%= stylesheet_link_tag    "para" %>
+
+<% if session[:ad]!=nil %>
+    <div id="edit_post_head" >
+
+    <h1 style="color: #ffffff;" align="center">All Users</h1>
+    </div>
+
+
+  <table border="1" align="center" width="40%" bgcolor="#EDEDED" >
+
+  <tr>
+    <th align="center" width="40%">Username</th>
+    <th align="center" width="40%">Unity</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td align="center" width="40%"><%= user.username %></td>
+    <td align="center" width="40%"><%= user.unity_id %></td>
+    <td title="Show User Details" align="center"><%= link_to image_tag('Show.png',:alt=>'ashow'), user %></td>
+    <td title="Edit User Details" align="center"><%= link_to image_tag('edit.png',:alt=>'aedit'), edit_user_path(user) %></td>
+    <td title="Remove User" align="center"><%= link_to image_tag('remove_user.png',:alt=>'aremove'), user, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+  <% end %>
+</table>
+    <% else %>
+    <div id="notice_message" >
+    <h1 align="center"> Permission Denied!</h1>
+    </div> <% end %>
+<br />
+<% if session[:mad]==nil %>
+<%= link_to 'New User', new_user_path %>
+                        <% end %>

@@ -1,0 +1,17 @@
+p{
+    margin: 0px;
+    padding: 0;
+}
+.efg{
+    font-size: small;
+    margin-right: 10px;
+    color: #ff0000;
+    font-style: italic;
+}
+
+.efg1{
+    font-size: small;
+    margin-right: 10px;
+    color: gray;
+    font-style: italic;
+}

@@ -1,0 +1,34 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+sindhura:
+  username: sindhura
+  password: cindraaaaaaaaaaaaaaaaaaaaaaa
+  unity_id: sgade
+
+ncsu:
+  username: ncsu
+  password: state
+  unity_id: ncsustate
+
+cndura:
+  username: cnd
+  password: idonnouio
+  unity_id: crazyyy
+
+mvkantra:
+  id: 2
+  username: mvkantra
+  password: pichi
+  unity_id: jasjahk
+
+admin:
+ username: admin
+ password: admin
+ unity_id: admin
+ utype: 1
+#<% (1..100).each do |i| %>
+#fix_<%=i%>
+#username: user_<%=i%>
+#password: pwd_<%=i%>
+#unity_id: uid_<%=i%>
+#<% end %>

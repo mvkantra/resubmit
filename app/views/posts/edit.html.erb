@@ -1,0 +1,12 @@
+<%= stylesheet_link_tag    "form" %>
+<div id="edit_post_head" >
+
+<h1 style="color: #ffffff;" align="center">Edit Post</h1>
+</div>
+<div id="edit_post_page" >
+
+<%= render 'form' %>
+
+<p style="margin-left: 170px"><%= link_to 'Show', @post %> |
+<%= link_to 'Back', posts_path %> </p>
+</div>

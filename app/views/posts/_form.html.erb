@@ -1,0 +1,37 @@
+<%= stylesheet_link_tag    "form" %>
+<%= stylesheet_link_tag    "submit" %>
+
+<%= form_for(@post) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    </br>
+
+  <div style="color: #ffffff;" class="field">
+    <p style="margin-left: 50px;"><b>
+    <%= f.label :postName %><br /></b>
+    <%= f.text_field :postName, :id=>'post' %></p>
+  </div>
+    <div style="color: #ffffff;" class="field">
+    <p style="margin-left: 50px;"><b>
+    <%= f.label :content %><br /></b>
+    <%= f.text_area :content, :id=>'con' %></p>
+  </div>
+    <div class="field">
+
+      <%= f.hidden_field :user_id, :value=>session[:mad] %>
+
+
+    </div>
+  <div class="actions1">
+  <%=  f.submit :class=> 'actions' %>
+  </div>
+<% end %>

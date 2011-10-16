@@ -1,0 +1,236 @@
+.bar{
+    border-radius: 10px;
+    border-width: 4px;
+    border-color:  #6E6E6E;
+
+  padding: 5px;
+}
+ #page {
+        background-color: #141414;
+     background: rgba(0, 0, 0, 0.6);
+        width: 350px;
+        margin: 0;
+        margin-left: auto;
+        margin-right: auto;
+     margin-top: 200px;
+    /* border: 10px;*/
+
+     border-color:  #FFC1C1;
+     border-width: 8px;
+     border-radius: 10px;
+      }
+#new_user_page {
+        background-color: #141414;
+     background: rgba(0, 0, 0, 0.6);
+        width: 450px;
+           height: auto;
+        margin: 0;
+        margin-left: auto;
+        margin-right: auto;
+     margin-top: 200px;
+     border: 10px;
+     border-radius: 10px;
+      }
+#q{
+    color: #0000FF;
+      border-radius: 10px;
+    font-weight: bolder;
+
+display:inline;
+width: 200px;
+
+}
+.user_label{
+    color: #ffffff;
+      border-radius: 10px;
+    font-weight: bolder;
+      margin-left: 10px;
+
+     text-align: right;
+display:block;
+width: 100px;
+ float: left;
+}
+.xx{
+    color: #ffffff;
+      border-radius: 10px;
+    font-weight: bolder;
+     /* margin-left: 10px;*/
+
+    /* text-align: right;
+display:block;
+
+width: 100px;
+ float: left;   */
+    display:inline;
+width: 200px;
+}
+/*#xx{
+    color: #ffffff;
+      border-radius: 10px;
+    font-weight: bolder;
+
+display:inline;
+width: 200px;
+
+}     */
+.user_text{
+    color: gray;
+
+      border-radius: 10px;
+    font-weight: bold;
+    margin-left: 15px;
+
+display:inline;
+width: 200px;
+
+}
+#y{
+    color: #0000FF;
+      border-radius: 10px;
+    font-weight: bolder;
+       margin-left: 5px;
+display:inline;
+width: 200px;
+
+}
+
+.yy{
+    color: #ffffff;
+      border-radius: 10px;
+    font-weight: bolder;
+
+display:inline;
+width: 200px;
+
+}
+.xyz{
+    color: #ffffff;
+      border-radius: 10px;
+    font-weight: bolder;
+     margin-left: 250px;
+display:inline;
+width: 200px;
+
+}
+#rat{
+    width: 600px;
+     margin: 0;
+        margin-left: auto;
+        margin-right: auto;
+     margin-top: auto;
+}
+.sha{
+    color: #ffffff;
+}
+.e {
+  margin-left: 5px;
+  position: absolute;
+    margin-top: 5px;
+       width: 30px ;
+    height: 30px;
+    cursor: pointer;
+    border-width: 0px;
+    border-radius: 4px;
+               background-image: url(Search.png);
+background-repeat: no-repeat;
+    background-position: center;
+     /*background: url('mag.png') no-repeat 80px;     */
+  /*display: inline-block;
+  text-align: center;
+  width: 180px;
+    height: 30px;
+  color: #cff;
+  background: #069;
+  font-size: large;
+  font-weight: bold;
+  padding: 0px;*/
+}
+
+#l{
+    /*-moz-border-radius: 20px 20px 20px 20px;
+    border-radius: 20px;
+    -moz-box-shadow: 0 1px 0 #444444;  */
+    background: none repeat scroll 0 0 #ffffff;
+   /* border: 0px solid black;*/
+
+    font: 13px Arial,sans-serif;
+                margin-top: 5px;
+    width: 215px;
+    height:30px;
+     float: left;
+    margin-left: 100px;
+}
+
+#name{
+
+    background: none repeat scroll 0 0 #ffffff;
+       margin-top: 5px;
+
+    font: 13px Arial,sans-serif;
+     height: 30px;
+    width: 215px;
+ margin-left: 10px;
+}
+#edit_post_head {
+       /* background-color: #ffebcd;*/
+     background-color: #141414;
+     background: rgba(0, 0, 0, 0.6);
+        width: 170px;
+           height: auto;
+        margin: 0;
+        margin-left: auto;
+        margin-right: auto;
+     margin-top: auto;
+     border: 10px;
+     border-radius: 10px;
+    color: #ffffff;
+      }
+#edit_post_page {
+        background-color: #141414;
+     background: rgba(0, 0, 0, 0.6);
+        width: 450px;
+           height:auto;
+        margin: 0;
+        margin-left: auto;
+        margin-right: auto;
+     margin-top: auto;
+     border: 10px;
+     border-radius: 10px;
+      }
+#notice_message {
+        background-color: #ffebcd;
+        width: 350px;
+           height: auto;
+        margin: 0;
+        margin-left: 540px;
+        margin-right: auto;
+     margin-top: 300px;
+     border: 10px;
+     border-radius: 10px;
+      }
+#user_show_page {
+        background-color: #141414;
+     background: rgba(0, 0, 0, 0.6);
+
+        width: 400px;
+           height: 250px;
+        margin: 0;
+        margin-left: auto;
+        margin-right: auto;
+     margin-top: 150px;
+     border: 10px;
+     border-radius: 10px;
+      }
+#user_edit_page {
+        background-color: #141414;
+     background: rgba(0, 0, 0, 0.6);
+        width: 400px;
+           height: auto;
+        margin: 0;
+        margin-left: auto;
+        margin-right: auto;
+     margin-top: auto;
+     border: 10px;
+     border-radius: 10px;
+      }

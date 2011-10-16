@@ -1,0 +1,120 @@
+<%= stylesheet_link_tag    "header" %>
+<%= stylesheet_link_tag    "para" %>
+<%= stylesheet_link_tag    "submit" %>
+<h1 style="margin-left: 79pc">
+<% if session[:mad]!=nil %>
+<p style="font-size: large;"><%= link_to 'New Post', new_post_path %></p>
+<% end %>
+</h1>
+
+
+    <table align="center" width="75%" bgcolor="#EDEDED" class="bortable" >
+    <% if @post.id==@post.IDofParent %>
+   <p style=" margin-top: 0em; margin-bottom: 0.5em; border-radius: 10px">
+   <tr>
+     <td width="100%"  style="margin-left: 5px; font-size: 16pt"><b><%= @post.postName %></b></td>
+
+     <% @ulikes=0 %>
+       <% @post10=Like.all %>
+
+       <% @post10.each do |big| %>
+
+           <% if big.post_id==@post.id %>
+               <% @ulikes=@ulikes+1 %>
+            <%end %>
+       <% end %>
+
+       <% @post10=nil %>
+       <td align="right" style="font-style: italic; color: #ff6347;"><b>Likes:</b></td>
+       <td align="right" style=" color: #ff6347;"><%= @ulikes  %></td>
+       <% if session[:mad]!=nil %>
+     <td title="Like" align="right"><%= link_to image_tag("thumb.png"),:controller => :likes, :action => :index, :idmine => @post.id  %></td>
+        <% end %>
+         <% if @post.user_id==session[:mad]|| session[:ad]!=nil %>
+     <td title="Edit" align="right"><%= link_to image_tag('editbig.png'), edit_post_path(@post) %></td>
+     <% end %>
+      <td title="Back" align="right"><%= link_to image_tag("back.png",:alt=>'back'), posts_path %></td>
+  </tr>
+  <tr>
+    <td style="font-style: italic;"><%= @post.content %></td>
+    </tr><tr>
+     <% if User.find_by_id(@post.user_id)!=nil%>
+         <td align="right" style="font-size: small; font-style: italic; color: #ff0000;"> <%= label_tag :wer, "-#{User.find_by_id(@post.user_id).username}"%></td>
+         <% else %>
+             <td align="right" style="font-size: small; font-style: italic; color: gray;"> <%= label_tag :wer, "-Deleted User"%></td>
+               <% end %>
+
+   </tr>
+   </p>
+ <% end %>
+
+ </table>
+
+<h1></h1>
+
+<table class="table">
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+
+
+  </tr>
+
+<% @post8.each do |post| %>
+
+      <tr>
+
+    <% @ulikes=0 %>
+       <% @post10=Like.all %>
+    <% @post10.each do |big| %>
+        <% if big.post_id==post.id %>
+                <% @ulikes=@ulikes+1 %>
+            <%end %>
+        <% end %>
+    <% @post10=nil %>
+    <td class="contact" width=900px><%= post.content %><div  id="bet" align="right">
+    <% if User.find_by_id(post.user_id)!=nil%>
+          <%= label_tag :wer, "-#{User.find_by_id(post.user_id).username}",:class => "efg"%>
+      <% else %>
+             <%= label_tag :wer, "-Deleted User",:class => "efg1"%>
+      <% end %>
+
+          <b>Likes:</b>
+         <%= @ulikes  %>
+    <% if session[:mad]!=nil %>
+     <%=  link_to image_tag("thumbreply.png"),:controller => :likes, :action => :index, :idmine => post.id %>
+
+        <% end %>
+    <% if post.user_id==session[:mad]|| session[:ad]!=nil %>
+    <%= link_to image_tag("edit.png"), edit_post_path(post) %>
+    <%= link_to image_tag("trash.png"), post, confirm: 'Are you sure?', method: :delete %>
+            </div>
+        </td>
+    <%end%>
+
+  </tr>
+
+  <% end %>
+</table>
+
+
+
+<% if session[:mad]!=nil %>
+<%= form_tag(:controller => :posts, :action => :reply ) do %>
+
+
+
+
+
+  <%= text_area_tag :rep,value='Reply' %>
+
+        <button type="submit" value="Reply" class="reply">Reply</button>
+
+
+        <% end %>
+<% end %>
+
+

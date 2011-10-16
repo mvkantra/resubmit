@@ -1,0 +1,40 @@
+<%= stylesheet_link_tag    "form" %>
+ <% if session[:mad] == nil %>
+   <h1 style="margin-left: 79pc">
+   <p style="font-size: large;"><%= link_to 'New User', new_user_path %></p>
+   </h1>
+<% end %>
+ <% if @user.id==session[:mad] || session[:ad]!=nil %>
+
+<div id = "user_show_page">
+    </br>
+
+    <p style="color: #ffffff; margin-left: 120px" id="notice"><%= notice %></p>
+
+    </br>
+     <p style="color:#ffffff; margin-left: 130px">
+     <b style="color: #ffffff;">Username:</b>
+    <%= @user.username %>
+     </p>
+
+
+    <% if @user.id==session[:mad] %>
+    <p style="color:#ffffff; margin-left: 130px ">
+    <b style="color: #ffffff;">Password:</b>
+    <%= @user.password%>
+    </p>
+    <% end %>
+
+    <p style="color:#ffffff; margin-left: 130px">
+    <b style="color: #ffffff;">Unity:</b>
+    <%= @user.unity_id%>
+    </p>
+
+<p style="margin-left: 160px"> <%= link_to 'Edit', edit_user_path(@user) %> </p>
+</div>
+<% else %>
+    <div id="notice_message" >
+    <h1 align="center"> Permission Denied!</h1>
+    </div>
+<% end %>
+

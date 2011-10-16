@@ -1,0 +1,59 @@
+<%= stylesheet_link_tag    "para" %>
+<%= stylesheet_link_tag    "submit" %>
+
+<div>
+<h1 style="margin-left: 79pc">
+<% if session[:mad]!=nil %>
+<p style="font-size: large;"><%= link_to 'New Post', new_post_path %></p>
+<% end %>
+</h1>
+<h1 style="color: #ffffff;  background-color: #141414;
+     background: rgba(0, 0, 0, 0.6); margin-left: auto; margin-right: auto; width: 200px; border: 10px; border-radius: 10px;" align="center">All Posts</h1>
+</div>
+
+<% @posts.each do |post| %>
+    <table align="center" width="70%" bgcolor="#EDEDED" >
+    <% if post.id==post.IDofParent %>
+   <p style="margin-top: 0em; margin-bottom: 0.5em; border-radius: 10px">
+   <tr>
+     <td width="100%" style="font-size: 16pt"><b><%= post.postName %></b></td>
+
+
+     <% @ulikes=0 %>
+       <% @post10=Like.all %>
+
+       <% @post10.each do |big| %>
+
+           <% if big.post_id==post.id %>
+               <% @ulikes=@ulikes+1 %>
+            <%end %>
+       <% end %>
+
+       <% @post10=nil %>
+       <td align="right" style="font-style: italic; color: #ff6347;"><b>Likes:</b></td>
+       <td align="right" style=" color: #ff6347;"><%= @ulikes  %></td>
+
+
+     <% if session[:mad] != nil %>
+     <td title="Like" align="right"><%= link_to image_tag("thumb.png"),:controller => :likes, :action => :likeaction, :idmine => post.id  %></td>
+     <% end %>
+     <td title="Show" align="right"><%= link_to image_tag('Show.png'), post %></td>
+
+     <% if post.user_id==session[:mad] || session[:ad]!=nil%>
+     <td title="Edit" align="right"><%= link_to image_tag('edit.png'), edit_post_path(post) %></td>
+     <td title="Delete" align="right"><%= link_to image_tag("trash.png"), post, confirm: 'Are you sure?', method: :delete %></td>
+     <% end %>
+  </tr>
+  <tr>
+    <td width="100%" style="font-style: italic;"><%= post.content %></td>
+    </tr><tr>
+     <% if User.find_by_id(post.user_id)!=nil%>
+         <td align="right" style="font-size: small; font-style: italic; color: #ff0000;"> <%= label_tag :wer, "-#{User.find_by_id(post.user_id).username}"%></td>
+         <% else %>
+             <td align="right" style="font-size: small; font-style: italic; color: gray;"> <%= label_tag :wer, "-Deleted User"%></td>
+  <% end %>
+  </tr>
+  </p>
+ <% end %>
+ <% end %>
+ </table>

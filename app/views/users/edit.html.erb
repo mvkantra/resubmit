@@ -1,0 +1,18 @@
+<%= stylesheet_link_tag    "form" %>
+<% if @user.id==session[:mad]||session[:ad]!=nil %>
+<div id="edit_post_head" >
+
+<h1 style="color: #ffffff;" align="center">Edit User</h1>
+</div>
+
+<div id="user_edit_page" >
+</br>
+<%= render 'form' %>
+<p style="margin-left: 200px"><%= link_to 'Show', @user %></p>
+
+</div>
+      <%else %>
+  <div id="notice_message" >
+    <h1 align="center"> Permission Denied!</h1>
+    </div>
+<% end %>

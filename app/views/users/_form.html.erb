@@ -1,0 +1,62 @@
+<%= stylesheet_link_tag    "form" %>
+<%= stylesheet_link_tag    "submit" %>
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div style="color: #ffffff;" id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <p>
+
+    </p>
+    <br/>
+
+  <div class="field">
+    <p>
+    <%= f.label :username, :class=>'user_label' %>
+    <%= f.text_field :username, :class=>'user_text', :id=>'uname' %>
+    </p>
+  </div>
+
+  <% if @user.id==session[:mad] || session[:ad]!=nil %>
+  <div class="field">
+    <p>
+    <%= f.label :password, :class=>'user_label' %>
+    <%= f.text_field :password, :class=>'user_text', :id=>'upwd'  %>
+     </p>
+  </div>
+        <%end%>
+
+  <div class="field">
+    <p>
+    <%= f.label :unity_id, :class=>'user_label' %>
+    <%= f.text_field :unity_id, :class=>'user_text', :id=>'uid' %>
+     </p>
+  </div>
+
+
+    <% if session[:ad] != nil  %>
+       <div class="field">
+         <p>
+           <%= f.label "User Type", :class=>'user_label'%>
+           <%= f.text_field :utype, :class=>'user_text', :id=>'uty'  %>
+          </p>
+       </div>
+
+   <% end  %>
+  <div class="actions1">
+    <p>
+    <%= f.submit :class => 'actions' %>
+     </p>
+  </div>
+
+
+
+
+<% end %>
